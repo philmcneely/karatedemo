@@ -15,7 +15,7 @@ And match $ contains {id:"#notnull"}
 * print 'url is: ', response.url
 * print 'files is: ', response.files
 
-* def file = response.files.'file1.txt'
+* def file = response.files["file1.txt"]
 * print 'file is: ', file
 * def filename = file.filename
 * def filecontent = file.content
@@ -31,7 +31,7 @@ Given path gistid
 Given header Authorization = 'Basic QW5keUV4cGVyaW9yOlhUZXN0OTkh'
 And request { "description":"Created via API" , "public":"true" , "files": { "file1.txt":{"content":"Updated File Contents"} } }
 When method PATCH
-* def updatedfile = response.files.'file1.txt'
+* def updatedfile = response.files["file1.txt"]
 * def updatedfilecontent = updatedfile.content
 * print 'updatedfile is: ', updatedfile
 And match updatedfilecontent == "Updated File Contents"

@@ -14,7 +14,7 @@ And match $ contains {id:"#notnull"}
 * print 'url is: ', response.url
 * print 'files is: ', response.files
 
-* def file = response.files.'file1.txt'
+* def file = response.files["file1.txt"]
 * print 'file is: ', file
 * def filename = file.filename
 * def filecontent = file.content
